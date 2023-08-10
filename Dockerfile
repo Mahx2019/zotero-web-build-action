@@ -14,7 +14,7 @@ RUN cd /zotero && \
 
 RUN git clone --recursive https://github.com/zotero/web-library.git && \
 	cd web-library && \
-	npm install
+	npm ci
 
 RUN cd /zotero/web-library && npm run build
 
