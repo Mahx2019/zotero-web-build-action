@@ -12,9 +12,8 @@ RUN cd /zotero && \
 	mkdir config && \
 	chmod +x entrypoint.sh
 
-RUN git clone https://github.com/zotero/web-library && \
+RUN git clone --recursive https://github.com/zotero/web-library.git && \
 	cd web-library && \
-	git checkout $TAG && \
 	npm install
 
 RUN cd /zotero/web-library && npm run build
