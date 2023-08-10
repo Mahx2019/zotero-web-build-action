@@ -1,7 +1,7 @@
 FROM alpine:3
 ARG TAG=master
 RUN apk update &&\
-	apk add --no-cache nodejs npm git rsync perl
+	apk add --no-cache nodejs npm git git-lfs rsync perl zip python3 curl wget
 
 RUN npm -v && node -v
 
