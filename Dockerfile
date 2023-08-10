@@ -1,12 +1,9 @@
 FROM alpine:3
 ARG TAG=master
-RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories &&\
-	apk update &&\
+RUN apk update &&\
 	apk add --no-cache nodejs npm git rsync perl
 
-RUN npm config set registry https://registry.npmmirror.com &&\
-	npm config get registry &&\
-	npm -v && node -v
+RUN npm -v && node -v
 
 WORKDIR /zotero
 COPY entrypoint.sh /zotero/
